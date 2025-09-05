@@ -1,10 +1,54 @@
 const container = document.querySelector(".container")
-for(i = 1; i <= 16 * 16; i++) {
+const gridSize = document.querySelector(".gridSize")
+
+function defaultGrid (size) {
+for(i = 1; i <= size * size; i++) {
 
     let square = document.createElement("div")
     square.classList = "square";
     container.appendChild(square);
 }
+}
+
+function colourOnHover () {
 let allSquares = document.querySelectorAll(".square")
 allSquares.forEach(square => square.addEventListener('mouseenter', () => square.style.backgroundColor = "aqua") )
+}
+
+defaultGrid(16)
+colourOnHover()
+
+let size;
+gridSize.addEventListener('click', function() {makeNewGrid() } )
+
+function makeNewGrid () {
+    // remove old grid
+    const removeSquare = document.querySelectorAll(".square")
+    removeSquare.forEach(square => container.removeChild(square))
+    let size = Number(prompt("Enter size of grid: ", "1-100")) 
+
+    // make new grid if size less than 100
+
+    if (size <= 100) {
+    console.log(size)
+    defaultGrid(size)
+    let gridWidth = 25 * size
+    container.style.width = gridWidth + "px"
+    colourOnHover()
+    }
+    // make default grid for invalid value
+    
+    else {
+    alert ("enter a valid value")
+    
+    defaultGrid(16)
+    gridWidth = 25 * size
+    container.style.width = gridWidth + "px"
+    colourOnHover()
+    
+    }
+}
+
+
+
 
