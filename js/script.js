@@ -1,7 +1,7 @@
 const container = document.querySelector(".container")
 const gridSize = document.querySelector(".gridSize")
 
-function defaultGrid (size) {
+function grid (size) {
 for(i = 1; i <= size * size; i++) {
 
     let square = document.createElement("div")
@@ -15,7 +15,7 @@ let allSquares = document.querySelectorAll(".square")
 allSquares.forEach(square => square.addEventListener('mouseenter', () => square.style.backgroundColor = "aqua") )
 }
 
-defaultGrid(16)
+grid(16)
 colourOnHover()
 
 let size;
@@ -31,7 +31,7 @@ function makeNewGrid () {
 
     if (size <= 100) {
     console.log(size)
-    defaultGrid(size)
+    grid(size)
     let gridWidth = 25 * size
     container.style.width = gridWidth + "px"
     colourOnHover()
@@ -41,7 +41,7 @@ function makeNewGrid () {
     else {
     alert ("enter a valid value")
     
-    defaultGrid(16)
+    grid(16)
     container.style.width = "400px"
     colourOnHover()
     
