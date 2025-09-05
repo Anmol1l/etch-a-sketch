@@ -42,8 +42,7 @@ function makeNewGrid () {
     alert ("enter a valid value")
     
     defaultGrid(16)
-    gridWidth = 25 * size
-    container.style.width = gridWidth + "px"
+    container.style.width = "400px"
     colourOnHover()
     
     }
