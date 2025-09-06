@@ -91,3 +91,6 @@ colorPicker.addEventListener('click', function() {colorOnDemand()} )
 
 const erase = document.querySelector(".erase")
 erase.addEventListener('click', function() {colorOnHover("peachpuff")})
+
+const eraseAll = document.querySelector(".eraseAll")
+eraseAll.addEventListener('click', () => window.location.reload())
