@@ -6,19 +6,19 @@ for(i = 1; i <= size * size; i++) {
 
     let square = document.createElement("div")
     square.classList = "square";
-    square.style.height = (968 / size) -2 + 'px'
-    square.style.width = (968 / size) -2 + 'px'
+    square.style.height = (868 / size) -2 + 'px'
+    square.style.width = (868 / size) -2 + 'px'
     container.appendChild(square);
 }
 }
 
-function colourOnHover() {
+function colourOnHover(color) {
 let allSquares = document.querySelectorAll(".square")
-allSquares.forEach(square => square.addEventListener('mouseenter', () => square.style.backgroundColor = "aqua") )
+allSquares.forEach(square => square.addEventListener('mouseenter', () => square.style.backgroundColor = color) )
 }
 
 grid(16)
-colourOnHover()
+colourOnHover("#00FFFF")
 
 gridSize.addEventListener('click', function() { makeNewGrid()})
 
@@ -31,14 +31,50 @@ function makeNewGrid () {
 
     if (size >=1 && size <= 100) {
     grid(size)
-    colourOnHover()
+    colourOnHover("#00FFFF")
     }
     else {
         alert("Enter valid number")
         grid(16)
-        colourOnHover()
+        colourOnHover("#00FFFF")
     }
 }
+
+let randomColor = document.querySelector(".randomColor")
+randomColor.addEventListener('click', function () {randomiseColor() })
+
+let shade = document.querySelector(".shade") 
+shade.addEventListener('click', function() {shadeSquares()} )
+
+function getRandomColor() {
+    const r = Math.floor(Math.random() *256);
+    const b = Math.floor(Math.random() *256);
+    const g = Math.floor(Math.random() *256);
+    return `rgb(${r}, ${g}, ${b})`
+}
+
+function randomiseColor () {
+    let colorSquares = document.querySelectorAll(".square")
+    colorSquares.forEach(square => square.addEventListener('mouseenter', () => square.style.backgroundColor = getRandomColor()))
+}
+let opacity = 0
+
+function inreaseOpacity() {
+    for (i = 0; i<=10; i++) {
+        opacity +=0.001
+        return opacity;
+    }
+}
+
+function shadeSquares() {
+    let shade = document.querySelectorAll(".square")
+    shade.forEach(square => square.addEventListener('mouseenter', () => {
+        square.style.backgroundColor = "rgba(0,0,0)"
+        square.style.opacity = inreaseOpacity()
+    } ))
+    
+}
+
 
 
 

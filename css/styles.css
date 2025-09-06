@@ -1,14 +1,12 @@
 .square {
     border: 1px solid black;
-    /* width: 23px;
-    height: 23px; */
     display: flex;
 }
 .container {
     border: 5px solid red;
     display: flex;
     flex-wrap: wrap;
-    width: 968px;
+    width: 868px;
 }
 .square:hover {
     background-color: black;
