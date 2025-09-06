@@ -48,4 +48,5 @@ body {
 }
 button:hover {
     background-color: pink;
+    color:black;
 }
