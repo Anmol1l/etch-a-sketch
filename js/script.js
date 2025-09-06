@@ -12,7 +12,7 @@ for(i = 1; i <= size * size; i++) {
 }
 }
 
-function colourOnHover(color) {
+function colorOnHover(color) {
 
     let allSquares = document.querySelectorAll(".square")
 allSquares.forEach(square => square.addEventListener('mouseenter', () => square.style.backgroundColor = color) )
@@ -20,7 +20,7 @@ allSquares.forEach(square => square.addEventListener('mouseenter', () => square.
 }
 
 grid(16)
-colourOnHover("#00ffff")
+colorOnHover("#00ffff")
 
 gridSize.addEventListener('click', function() { makeNewGrid()})
 
@@ -33,12 +33,12 @@ function makeNewGrid () {
 
     if (size >=1 && size <= 100) {
     grid(size)
-    colourOnHover("#00ffff")
+    colorOnHover("#00ffff")
     }
     else {
         alert("Enter valid number")
         grid(16)
-        colourOnHover("#00ffff")
+        colorOnHover("#00ffff")
     }
 }
 
@@ -77,7 +77,7 @@ function shadeSquares() {
     
 }
 
-function colourOnDemand () {
+function colorOnDemand () {
     let pickColor = document.querySelector("#colorPicker");
 pickColor.addEventListener('input', (event) => {
      color = event.target.value;
@@ -86,6 +86,8 @@ allSquares.forEach(square => square.addEventListener('mouseenter', () => square.
 })
 };
 
-let colorWhenHover = document.querySelector("#colorPicker") 
-colorWhenHover.addEventListener('click', function() {colourOnDemand()} )
+let colorPicker = document.querySelector("#colorPicker") 
+colorPicker.addEventListener('click', function() {colorOnDemand()} )
 
+const erase = document.querySelector(".erase")
+erase.addEventListener('click', function() {colorOnHover("peachpuff")})

@@ -1,13 +1,51 @@
+body {
+    margin: 0px;
+}
 .square {
     border: 1px solid black;
     display: flex;
 }
 .container {
-    border: 5px solid red;
+    border: 5px solid rgb(63, 171, 248);
     display: flex;
     flex-wrap: wrap;
     width: 868px;
+    background-color: peachpuff;
 }
 .square:hover {
     background-color: black;
+}
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 25px; */
+} 
+.buttons-space {
+    width: 50vw;
+    height: 50vw;
+    background-color: rgb(109, 43, 43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-space {
+    width: 50vw;
+    height: 50vw;
+    background-color: rgb(109, 43, 43);
+    display: flex;
+    align-items: center;
+}
+.button {
+    background-color: rgb(32, 134, 207);
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    font-size: large;
+    border: 2px solid rgb(59, 150, 255);
+    margin: 5px;
+    font-weight: bold;
+}
+button:hover {
+    background-color: pink;
 }
