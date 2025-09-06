@@ -13,12 +13,14 @@ for(i = 1; i <= size * size; i++) {
 }
 
 function colourOnHover(color) {
-let allSquares = document.querySelectorAll(".square")
+
+    let allSquares = document.querySelectorAll(".square")
 allSquares.forEach(square => square.addEventListener('mouseenter', () => square.style.backgroundColor = color) )
+
 }
 
 grid(16)
-colourOnHover("#00FFFF")
+colourOnHover("#00ffff")
 
 gridSize.addEventListener('click', function() { makeNewGrid()})
 
@@ -31,12 +33,12 @@ function makeNewGrid () {
 
     if (size >=1 && size <= 100) {
     grid(size)
-    colourOnHover("#00FFFF")
+    colourOnHover("#00ffff")
     }
     else {
         alert("Enter valid number")
         grid(16)
-        colourOnHover("#00FFFF")
+        colourOnHover("#00ffff")
     }
 }
 
@@ -75,7 +77,15 @@ function shadeSquares() {
     
 }
 
+function colourOnDemand () {
+    let pickColor = document.querySelector("#colorPicker");
+pickColor.addEventListener('input', (event) => {
+     color = event.target.value;
+     let allSquares = document.querySelectorAll(".square")
+allSquares.forEach(square => square.addEventListener('mouseenter', () => square.style.backgroundColor = color) )
+})
+};
 
-
-
+let colorWhenHover = document.querySelector("#colorPicker") 
+colorWhenHover.addEventListener('click', function() {colourOnDemand()} )
 
